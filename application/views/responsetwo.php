@@ -50,23 +50,19 @@
                   <tbody>
                   <?php
                   $no = 0;
-                                    foreach ($datas as $data) { 
-                                        $no++;
-                                        ?>
-                                        
+                  for ($i = 0; $i<count($datas); $i = $i + 4) {
+                    
+                    ?>
                                         <tr>
                                             <td><?= $no++; ?></td>
-                                            <td><?= (isset($data["id_pendaftar"])) ? $data["id_pendaftar"] : ""; ?></td>
-                                            <td><?= (isset($data['nip'])) ? $data['nip'] : ""; ?></td>
-                                            <td><?= (isset($data['satuan_kerja'])) ? $data['satuan_kerja'] : ""; ?></td>
-                                            <td><?= (isset($data['posisi_yang_dipilih'])) ? $data['posisi_yang_dipilih'] : ""; ?></td>
-                                            <td><?= (isset($data['bahasa_pemrograman_yang_dikuasai'])) ? $data['bahasa_pemrograman_yang_dikuasai'] : ""; ?></BR>
-                                            <?= (isset($data['framework_bahasa_pemrograman_yang_dikuasai'])) ? $data['framework_bahasa_pemrograman_yang_dikuasai'] : ""; ?></BR>
-                                            <?= (isset($data['database_yang_dikuasai'])) ? $data['database_yang_dikuasai'] : ""; ?></BR>
-                                            <?= (isset($data['tools_yang_dikuasai'])) ? $data['tools_yang_dikuasai'] : ""; ?></td>
-                                            <td><?= (isset($data['pernah_membuat_mobile_apps'])) ? $data['pernah_membuat_mobile_apps'] : ""; ?></td>
+                                            <td><?= (isset($datas[$i]["id_pendaftar"])) ? $datas[0]["id_pendaftar"] : ""; ?></td>
+                                            <td><?= (isset($datas[$i]['value'])) ? $datas[$i]['value'] : ""; ?></td>
+                                            <td><?= (isset($datas[$i+1]['value'])) ? $datas[$i]['value'] : ""; ?></td>
+                                            <td><?= (isset($datas[$i+2]['value'])) ? $datas[$i]['value'] : ""; ?></td>
+                                            <td><?= (isset($datas[$i+3]['value'])) ? $datas[$i]['value'] : ""; ?></td>
                                         </tr>
-                        <?php } ?>
+                        <?php 
+                      } ?>
 
                   </tfoot>
                 </table>

@@ -32,19 +32,19 @@ class Responsetwo extends CI_Controller {
 		$json = file_get_contents($url);
 		$json = json_decode($json,true);
 
-		print_r($json);
-		die();
+		//print_r($json);
+		//die();
 
 		$data = [
             'title' => 'Beranda',
-			'datas' => $json['Form Responses 1'],
+			'datas' => $json,
         ];
 
         $this->load->view('templates/header');
         $this->load->view('templates/body');
         $this->load->view('templates/nav');
         $this->load->view('templates/sidebar');
-		$this->load->view('responseone', $data);
+		$this->load->view('responsetwo', $data);
         //$this->load->view('beranda', $data);
         //$this->load->view('templates/copyright');
         $this->load->view('templates/footer');
