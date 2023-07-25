@@ -51,15 +51,15 @@
                   <?php
                   $no = 0;
                   for ($i = 0; $i<count($datas); $i = $i + 4) {
-                    
+                    $no++;
                     ?>
                                         <tr>
                                             <td><?= $no++; ?></td>
                                             <td><?= (isset($datas[$i]["id_pendaftar"])) ? $datas[0]["id_pendaftar"] : ""; ?></td>
                                             <td><?= (isset($datas[$i]['value'])) ? $datas[$i]['value'] : ""; ?></td>
-                                            <td><?= (isset($datas[$i+1]['value'])) ? $datas[$i]['value'] : ""; ?></td>
-                                            <td><?= (isset($datas[$i+2]['value'])) ? $datas[$i]['value'] : ""; ?></td>
-                                            <td><?= (isset($datas[$i+3]['value'])) ? $datas[$i]['value'] : ""; ?></td>
+                                            <td><?= (isset($datas[$i+1]['value'])) ? $datas[$i+1]['value'] : ""; ?></td>
+                                            <td><?= (isset($datas[$i+2]['value'])) ? $datas[$i+2]['value'] : ""; ?></td>
+                                            <td> <a href="<?= (isset($datas[$i+3]['value'])) ? $datas[$i+3]['value'] : ""; ?>">LINK</a></td>
                                         </tr>
                         <?php 
                       } ?>
